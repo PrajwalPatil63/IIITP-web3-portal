@@ -12,16 +12,19 @@ const PUBLIC_RPC_URLS = [
 ];
 
 async function firstWorkingProvider() {
-    for (const url of PUBLIC_RPC_URLS) {
-        try {
-            const p = new JsonRpcProvider(url);
-            await p.getBlockNumber();
-            return p;
-        } catch {
-            // try next
-        }
+    // Fire all RPC tests at the exact same time. The fastest to respond wins!
+    const promises = PUBLIC_RPC_URLS.map(async (url) => {
+        const p = new JsonRpcProvider(url);
+        await p.getBlockNumber(); // Test if it actually responds
+        return p;
+    });
+
+    try {
+        return await Promise.any(promises);
+    } catch {
+        console.error("All public RPCs failed to connect. A strict firewall may be blocking them.");
+        return null;
     }
-    return null;
 }
 
 const EMPTY = {
