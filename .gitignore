@@ -1,0 +1,27 @@
+# Environments
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Hardhat / Blockchain
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# React / Frontend
+build/
+.DS_Store

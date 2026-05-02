@@ -1,0 +1,14 @@
+{
+  "name": "BP1",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@types/node": "^22.19.17",
+    "dotenv": "^17.4.2",
+    "hardhat": "^2.22.3",
+    "typescript": "~5.8.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3"
+  }
+}
