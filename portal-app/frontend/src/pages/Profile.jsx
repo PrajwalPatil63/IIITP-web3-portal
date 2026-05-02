@@ -14,7 +14,9 @@ export default function ProfilePage() {
 
     useEffect(() => {
         if (!account) return;
-        apiGet(`/profiles/${account}`).then(setProfile).catch(() => {});
+        apiGet(`/profiles/${account}`)
+            .then(setProfile)
+            .catch(() => setProfile({ role: "student" }));
     }, [account]);
 
     if (!account) {
