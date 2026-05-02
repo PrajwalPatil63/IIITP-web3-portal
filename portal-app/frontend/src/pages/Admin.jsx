@@ -30,7 +30,12 @@ export default function AdminPage() {
     });
 
     useEffect(() => {
-        apiGet("/tx").then(setTx).catch(() => {});
+        apiGet("/tx")
+            .then((data) => {
+                if (Array.isArray(data)) setTx(data);
+                else setTx([]);
+            })
+            .catch(() => setTx([]));
     }, []);
 
     if (!account) {
