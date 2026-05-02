@@ -15,7 +15,12 @@ export default function Dashboard() {
 
     useEffect(() => {
         if (!account) return;
-        apiGet(`/tx/${account}`).then(setTx).catch(() => {});
+        apiGet(`/tx/${account}`)
+            .then((data) => {
+                if (Array.isArray(data)) setTx(data);
+                else setTx([]);
+            })
+            .catch(() => setTx([]));
     }, [account]);
 
     if (!account) {
