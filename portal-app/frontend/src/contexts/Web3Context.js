@@ -22,7 +22,7 @@ const SEPOLIA_PARAMS = {
     chainId: CHAIN_ID_HEX,
     chainName: "Sepolia Testnet",
     nativeCurrency: { name: "Sepolia ETH", symbol: "ETH", decimals: 18 },
-    rpcUrls: ["https://rpc.sepolia.org", "https://ethereum-sepolia-rpc.publicnode.com"],
+    rpcUrls: ["https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", "https://ethereum-sepolia.blockpi.network/v1/rpc/public", "https://rpc.sepolia.org"],
     blockExplorerUrls: [EXPLORER_URL],
 };
 

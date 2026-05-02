@@ -4,9 +4,11 @@ import { ADDRESSES, CONTRACTS } from "../contracts/config";
 
 // Public read-only Sepolia RPC (no wallet required — works even for unauthenticated visitors).
 const PUBLIC_RPC_URLS = [
-    "https://ethereum-sepolia-rpc.publicnode.com",
+    "https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // Public Infura key fallback
+    "https://ethereum-sepolia.blockpi.network/v1/rpc/public",
+    "https://gateway.tenderly.co/public/sepolia",
     "https://rpc.sepolia.org",
-    "https://sepolia.drpc.org",
+    "https://ethereum-sepolia-rpc.publicnode.com",
 ];
 
 async function firstWorkingProvider() {
